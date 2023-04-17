@@ -24,5 +24,15 @@ namespace ITAssetsManagement
         {
             InitializeComponent();
         }
+
+        private void Funcionario_init_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Software_init_Click(object sender, RoutedEventArgs e)
+        {
+            Menu_Inicial.Visibility = Visibility.Hidden;
+        }
     }
 }
