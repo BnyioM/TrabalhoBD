@@ -16,7 +16,7 @@ namespace ITAssetsManagement.Data
         }
 
         public DbSet<Funcionario> Funcionarios { get; set; }
-        public DbSet<Software> Software { get; set; }
+        public DbSet<Ativos_Software> Software { get; set; }
         public DbSet<Hardware> Hardware { get; set; }
         public DbSet<Fornecedor> Fornecedor { get; set; }
 
