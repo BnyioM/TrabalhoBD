@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ySWHv8nDCc/6V425JtMDYSG0cvDn12kNbLT6X3ChcUTX0dwXOQl17l5+il9PigRQwkNDZW5sJPZRBINt/LJDgA==",
+  "dgSpecHash": "faYyvb7JT73efPKOenthzAtxV4HW+Z0N7KmiHtG7VnNcp+XengBPhe3Np6ArQf2+FYSDc0LLlV5pmu5HD5HnHw==",
   "success": true,
-  "projectFilePath": "C:\\dev\\TrabalhoBD\\ITAssetsManagement.csproj",
+  "projectFilePath": "C:\\Users\\bruno\\source\\repos\\TrabalhoBD\\ITAssetsManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bruno\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

@@ -1,10 +1,12 @@
-﻿using ITAssetsManagement.Models;
+﻿using ITAssetsManagement.Models.Tables;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.Entity;
 using System.Windows.Media.Imaging;
+using ITAssetsManagement.Models;
+
 
 namespace ITAssetsManagement.Data
 {
@@ -15,10 +17,15 @@ namespace ITAssetsManagement.Data
             Database.SetInitializer<Context>(new DropCreateDatabaseIfModelChanges<Context>());
         }
 
-        public DbSet<Funcionario> Funcionarios { get; set; }
+        public DbSet<Funcionarios> Funcionarios { get; set; }
         public DbSet<Ativos_Software> Software { get; set; }
-        public DbSet<Hardware> Hardware { get; set; }
-        public DbSet<Fornecedor> Fornecedor { get; set; }
+        public DbSet<Ativos_Hardware> Hardware { get; set; }
+        public DbSet<Fornecedores> Fornecedor { get; set; }
+        public DbSet<Unidade> Unidade { get; set; }
+        public DbSet<Hardware_Produto> Hardware_Produto { get; set; }
+        public DbSet<Software_Produto> Software_Produto { get; set; }
+        public DbSet<Fornecedor_tem_hardware> Fornecedor_tem_hardware { get; set; }
+        public DbSet<Fornecedor_tem_software> Fornecedor_tem_software { get; set; }
 
         /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -32,6 +39,23 @@ namespace ITAssetsManagement.Data
 
             base.OnModelCreating(modelBuilder);
         }*/
+
+        public List<Funcionario_obj> Get_funcionario_nome(string nome)
+        {
+            List<Funcionario_obj> lista = new();
+            foreach (var linha in this.Funcionarios)
+            {
+                if (linha.Nome == nome) {
+                lista.Add(new Funcionario_obj{
+                    Nome = linha.Nome,
+                    Email = linha.Email,
+                    Telefone = linha.Telefone,
+                    CPF = linha.CPF
+                }); 
+               }
+            }
+            return lista;
+        }
 
     }
 }

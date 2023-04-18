@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\dev\TrabalhoBD\obj\Debug\net6.0-windows\
+C:\Users\bruno\source\repos\TrabalhoBD\obj\Debug\net6.0-windows\
 ITAssetsManagement
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\dev\TrabalhoBD\App.xaml
-2-265767449
+C:\Users\bruno\source\repos\TrabalhoBD\App.xaml
+2-1509026966
 
-122023198230
-226-188259563
-Views\AssetsListPage.xaml;Views\MainWindow.xaml;
+20-304080881
+2261722501255
+MainWindow.xaml;Views\AssetsListPage.xaml;
 
 False
 
