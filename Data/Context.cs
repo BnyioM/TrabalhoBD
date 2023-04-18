@@ -8,16 +8,14 @@ using System.Windows.Media.Imaging;
 using ITAssetsManagement.Models;
 
 
-namespace ITAssetsManagement.Data
+public class Context : DbContext
 {
-    public class Context : DbContext
+    public Context() : base("name=AssetsDatabase")
     {
-        public Context() : base("name=AssetsDatabase")
-        {
-            Database.SetInitializer<Context>(new DropCreateDatabaseIfModelChanges<Context>());
-        }
+        Database.SetInitializer<Context>(new DropCreateDatabaseIfModelChanges<Context>());
+    }
 
-        public DbSet<Funcionarios> Funcionarios { get; set; }
+    public DbSet<Funcionarios> Funcionarios { get; set; }
         public DbSet<Ativos_Software> Software { get; set; }
         public DbSet<Ativos_Hardware> Hardware { get; set; }
         public DbSet<Fornecedores> Fornecedor { get; set; }
@@ -83,5 +81,41 @@ namespace ITAssetsManagement.Data
             return lista;
         }
 
+        public List<Funcionario_obj> Get_funcionario_CPF(long CPF)
+        {
+            List<Funcionario_obj> lista = new();
+            foreach (var linha in this.Funcionarios)
+            {
+                if (linha.CPF == CPF)
+                {
+                    lista.Add(new Funcionario_obj
+                    {
+                        Nome = linha.Nome,
+                        Email = linha.Email,
+                        Telefone = linha.Telefone,
+                        CPF = linha.CPF
+                    });
+                }
+            }
+            return lista;
+        }
+
+        public List<Hardware_obj> Get_Hardware_HID(int Hardware_ID)        {
+            List<Hardware_obj> lista = new();
+            foreach (var linha in this.Hardware)
+            {
+                if (linha.Hardware_ID == Hardware_ID)
+                {
+                    lista.Add(new Hardware_obj
+                    {
+                        ID = linha.ID,
+                        Hardware_ID = linha.Hardware_ID,
+                        Funcionario = linha.Funcionario,
+                        Fornecedor = linha.Fornecedor
+                    });
+                }
+            }
+            return lista;
+        }
     }
 }
