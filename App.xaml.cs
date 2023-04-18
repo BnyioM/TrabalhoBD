@@ -20,7 +20,7 @@ namespace wpf_catalog
         {
             ServiceCollection services = new();
 
-            services.AddDbContext<Context>(options =>
+            services.AddDbContext<DbContext>(options =>
             {
                 options.UseSqlServer("Data source=BRUNOPC\\SQLEXPRESS; initial catalog=IT_Assets_Management_Relational; user id=sa; pwd=bruno123;");
             });
