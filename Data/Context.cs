@@ -43,6 +43,7 @@ namespace ITAssetsManagement.Data
         public List<Funcionario_obj> Get_funcionario_nome(string nome)
         {
             List<Funcionario_obj> lista = new();
+
             foreach (var linha in this.Funcionarios)
             {
                 if (linha.Nome == nome) {
@@ -54,6 +55,31 @@ namespace ITAssetsManagement.Data
                 }); 
                }
             }
+
+
+            return lista;
+        }
+
+        public List<Software_obj> Get_software_nome(string nome)
+        {
+            List<string> Nomes_software = this.Database.SqlQuery<List<string>>
+
+;
+            foreach (var linha in this.Funcionarios)
+            {
+                if (linha.Nome == nome)
+                {
+                    lista.Add(new Funcionario_obj
+                    {
+                        Nome = linha.Nome,
+                        Email = linha.Email,
+                        Telefone = linha.Telefone,
+                        CPF = linha.CPF
+                    });
+                }
+            }
+
+
             return lista;
         }
 
