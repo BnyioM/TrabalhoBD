@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ITAssetsManagement.Models.Tables
 {
@@ -15,7 +16,10 @@ namespace ITAssetsManagement.Models.Tables
 
         [Required]
         public int Hardware_ID { get; set; }
-        
 
+        public XElement Manutencao { get; set; }
+        public int Funcionario_ID {get; set; }
+
+        public int Fornecedor_ID { get; set; }
     }
 }

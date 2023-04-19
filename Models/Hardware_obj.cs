@@ -8,5 +8,9 @@ namespace ITAssetsManagement.Models
 {
     internal class Hardware_obj
     {
+        public int ID { get; set; }
+        public int Hardware_ID { get; set; }
+        public string Hardware_Nome { get; set; }
+        public string Funcionario_Nome { get; set; }
     }
 }

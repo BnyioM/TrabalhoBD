@@ -14,7 +14,8 @@ namespace ITAssetsManagement.Models.Tables
 
         [Required]
         public int Produto_ID { get; set; }
-
-        
+        public int Funcionario_ID { get; set; } 
+        public int Fornecedor_ID { get; set; }
+        public string Licenca { get; set; }
     }
 }

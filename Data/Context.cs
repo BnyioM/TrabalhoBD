@@ -60,19 +60,25 @@ public class Context : DbContext
 
         public List<Software_obj> Get_software_nome(string nome)
         {
-            List<string> Nomes_software = this.Database.SqlQuery<List<string>>
-
-;
-            foreach (var linha in this.Funcionarios)
+             List<Software_obj> lista = new();
+            
+        ;
+            foreach (var linha in this.Software)
             {
                 if (linha.Nome == nome)
                 {
-                    lista.Add(new Funcionario_obj
+                string software_nome = this.Database.SqlQuery<string>("Select Nome from Software_Produto where ID = " + linha.Funcionario_ID)
+                    .FirstOrDefault();
+
+                string funcionario_nome = this.Database.SqlQuery<string>("Select Nome from Funcionarios where ID = " + linha.Funcionario_ID)
+                        .FirstOrDefault();
+                lista.Add(new Software_obj
                     {
-                        Nome = linha.Nome,
-                        Email = linha.Email,
-                        Telefone = linha.Telefone,
-                        CPF = linha.CPF
+                        ID = linha.ID,
+                        Software_ID = linha.Produto_ID,
+                        Software_Nome = software_nome,
+                        Licenca = linha.Licenca,
+                        Funcionario_Nome = funcionario_nome
                     });
                 }
             }
@@ -117,5 +123,24 @@ public class Context : DbContext
             }
             return lista;
         }
-    }
+
+        public List<Hardware_obj> Get_Hardware_Nome(string Hardware_Nome)
+        {
+            foreach (var linha in this.Hardware)
+            {
+                if (linha.Hardware_ID == Hardware_ID)
+                {
+                    
+                    lista.Add(new Hardware_obj
+                    {
+                        ID = linha.ID,
+                        Hardware_ID = linha.Hardware_ID,
+                        Funcionario = linha.Funcionario,
+                        Fornecedor = linha.Fornecedor
+                    });
+                }
+            }
+            return lista;
+        }
+}
 }
